@@ -1,0 +1,103 @@
+:root{
+    --orange: #FBB034;
+}
+
+html{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+button {
+    border: unset;
+    outline: unset;
+    padding: unset;
+    cursor: pointer;
+}
+
+.text-orange {
+    color: var(--orange);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.navbar-items{
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.schedule-btn{
+    background-color: var(--orange);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 32px;
+}
+
+.sidebar-btn{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar-btn:focus ~ img {
+    transform: translateX(0);
+}
+.sidebar-btn:focus ~ .navbar-items {
+    transform: translateX(0);
+}
+
+.sidebar-btn:focus {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 850px){
+
+    .navbar {
+        height: 100vh;
+        justify-content: unset;
+        gap: 40px;
+    }
+
+    .navbar, .navbar-items {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .navbar-items > li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar > img, .navbar-items {
+        transform: translateX(-200%);
+        transition: 0.4s linear;
+    }
+
+    .navbar > img {
+        margin-left: 30px;
+    }
+
+    .sidebar-btn{
+        display: unset;
+    }
+
+}
